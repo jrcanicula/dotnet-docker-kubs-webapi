@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: training-course
+spec:
+  selector:
+    matchLabels:
+      app: training-course-pod
+  template:
+    metadata:
+      labels:
+        app: training-course-pod
+    spec:
+      containers:
+      - name: training-course-container
+        image: training-course:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
