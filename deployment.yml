@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: training-course
+  name: training-course-deployment
 spec:
   selector:
     matchLabels:
@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: training-course-container
-        image: training-course:v1
+        image: flowkun.azurecr.io/training-course:v1
         resources:
           limits:
             memory: "128Mi"
